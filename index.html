@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="maze.css">
+  <title>Maze Solver</title>
+</head>
+
+<body>
+  <div class="card-container">
+    <h3 class="card_title">Maze Solver</h3>
+    <div class="card">
+      <div class="card_body">
+        <canvas id="Maze" width="500" height="500"></canvas>
+      </div>
+    </div>
+    <svg id='svg' xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <filter id="gooey">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+          <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result=""highContrastGraphic"/>
+          <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop"/>
+        </filter>
+      </defs>
+    </svg>
+    <button class="btn" id="Solver">
+      <p class="btn-title">SOLVE</p>
+      <span class="bubbles">
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+      </span>
+
+    </button>
+  </div>
+  <script type="text/javascript" src="./js/maze.js"></script>
+</body>
+
+</html>
