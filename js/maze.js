@@ -8,11 +8,11 @@ class coord
 }
 
 
-let data = [[1, 0, 1, 1, 1],
-            [3, 0, 0, 0, 0],
-            [1, 0, 1, 1, 1],
-            [1, 0, 0, 0, 2],
-            [1, 1, 1, 1, 1]];
+let data = [[1, 0, 1, 0, 1, 1, 1, 1, 3, 1],
+            [1, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+            [1, 0, 1, 1, 1, 1, 1, 0, 1, 0],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [1, 2, 1, 1, 1, 1, 1, 1, 1, 1]];
 
 let cvs = document.getElementById("Maze");
 let ctx = document.getElementById("Maze").getContext("2d");
@@ -23,7 +23,7 @@ function BorderColorRaimbow(obj)
   obj.style.borderColor = "rgb(" + Rand(255, 0) + ", " + Rand(255, 0) + ", " + Rand(255, 0) + ")";
 }
 
-let manthanDraw = true;
+let manthanDraw = false;
 
 function draw() {
   for (let i = 0; i < data.length; i++) {
@@ -51,10 +51,10 @@ function draw() {
       }
       if (data[i][j] == 4)
       {
-        ctx.fillStyle = "rgba(255, 255, 0, 0.5)";
+        ctx.fillStyle = "rgba(255, 255, 0, 0.7)";
       }
-      ctx.translate(j * 500/5, i * 500/5);
-      ctx.fillRect(0, 0, 500/5, 500/5);
+      ctx.translate(j * 500/data[0].length, i * 500/data.length);
+      ctx.fillRect(0, 0, 500/data[0].length, 500/data.length);
       ctx.restore();
     }
   }
